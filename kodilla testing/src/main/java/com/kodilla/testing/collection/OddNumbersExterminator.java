@@ -18,6 +18,10 @@ public class OddNumbersExterminator {
     public static void main (String[] args) {
 
         public List<Integer> numbers() {
+            for(int i = 0; i < 10; i++) {
+                numbers.add(i);
+            }
+        }
 
         ArrayList<Integer> oddNumbers = new ArrayList<Integer>();
         oddNumbers.add(1);
