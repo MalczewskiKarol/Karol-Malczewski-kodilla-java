@@ -9,7 +9,7 @@ public class TestingMain {
 
         System.out.println("Test - pierwszy test jednostkowy: ");
 
-        SimpleUser simpleUser = new SimpleUser("theForumUser");
+        SimpleUser simpleUser = new SimpleUser("theForumUser", "John Smith"); // dodane realname zeby dzialalo :)
 
         String result = simpleUser.getUserName();
 
