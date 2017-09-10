@@ -1,4 +1,5 @@
 package com.kodilla.testing.collection;
+import com.kodilla.testing.collection.OddNumbersExterminator;
 import org.junit.*;
 import java.util.ArrayList;
 
@@ -22,14 +23,23 @@ public void before() {
     @Test
     public void testOddNumbersExterminatorEmptyList() {
         //Given
-        ArrayList<ArrayList<Integer>> numbers = new ArrayList<ArrayList<Integer>>();
+        OddNumbersExterminator numbersExterminator = new OddNumbersExterminator();
         //When
-        numbers.clear();
-        if(numbers.size() == 0) {
-            System.out.println("List test: OK!");
-        } else {
-            System.out.println("Error!");
-        }
+        boolean result = numbersExterminator.clear;
+        System.out.println("Testing 1 " + result);
+        //Then
+        Assert.assertTrue(result);
+
+    }
+    @Test
+    public void TestOddNumbersExterminatorNormalList() {
+        //Given
+        OddNumbersExterminator numbersExterminator1 = new OddNumbersExterminator();
+        //When
+        boolean result = numbersExterminator1.exterminate(ArrayList<Integer> numbers);
+        System.out.println("Testing 2 " + result);
+        //Then
+        Assert.assertTrue(result);
     }
 
 }

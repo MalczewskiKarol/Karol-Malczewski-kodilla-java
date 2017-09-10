@@ -25,6 +25,7 @@ public class ForumTestSuite {
         SimpleUser simpleUser = new SimpleUser("theForumUser", "John Smith");
         //When
         String result = simpleUser.getUserName();
+        System.out.println("Testing " + result);
         //Then
         Assert.assertEquals("theForumUser", result);
     }
@@ -34,6 +35,7 @@ public class ForumTestSuite {
         SimpleUser simpleUser = new SimpleUser("theForumUser", "John Smith");
         //When
         String result = simpleUser.getRealName();
+        System.out.println("Testing " + result);
         //Then
         Assert.assertEquals("John Smith", result);
     }
