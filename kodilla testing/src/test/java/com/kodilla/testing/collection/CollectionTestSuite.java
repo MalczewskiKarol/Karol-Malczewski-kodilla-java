@@ -30,5 +30,6 @@ public class CollectionTestSuite {
         //When
         oddNumbers.exterminate(ArrayList<Integer> numbers);
 
+
     }
 }
