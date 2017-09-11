@@ -1,11 +1,10 @@
 package com.kodilla.testing.collection;
-import java.util.ArrayList;
+import java.lang.*;
+import java.util.*;
 
 
 
 public class OddNumbersExterminator {
-    public boolean clear;
-    public boolean exterminate;
 
     public ArrayList<Integer> exterminate(ArrayList<Integer> numbers) {
         ArrayList<Integer> evenNumbers = new ArrayList<Integer>();
