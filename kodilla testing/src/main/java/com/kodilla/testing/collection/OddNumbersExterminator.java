@@ -13,7 +13,7 @@ public class OddNumbersExterminator {
                 evenNumbers.add(n);
             }
         }
-        return evenNumbers;
 
+        return evenNumbers;
     }
 }

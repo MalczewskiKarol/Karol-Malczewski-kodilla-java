@@ -1,6 +1,8 @@
 package com.kodilla.testing.collection;
-import com.kodilla.testing.collection.OddNumbersExterminator;
 import org.junit.*;
+
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class CollectionTestSuite {
     @Before
@@ -26,10 +28,22 @@ public class CollectionTestSuite {
     @Test
     public void testOddNumbersExterminatorEmptyList() {
         //Given
-        OddNumbersExterminator oddNumbers = new OddNumbersExterminator();
+        OddNumbersExterminator empty = new OddNumbersExterminator();
         //When
-        oddNumbers.exterminate(ArrayList<Integer> numbers);
+        empty.exterminate(new ArrayList<Integer>());
+        System.out.println("Test empty list: " + empty.exterminate(new ArrayList<Integer>()));
+        //Then
+        Assert.assertTrue(String.valueOf(empty), true);
+    }
 
+    @Test
+    public void testOddNumbersExterminatorNormalList() {
+        //Given
+        OddNumbersExterminator numbers = new OddNumbersExterminator();
+        //When
+        `
+        System.out.println("Test normal list: " + numbers.exterminate(new ArrayList<Integer>()));
+        //Then
 
     }
 }
