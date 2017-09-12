@@ -1,7 +1,7 @@
 package com.kodilla.testing.collection;
-import org.junit.*;
 
-import java.lang.reflect.Array;
+import org.junit.*;
+import java.lang.*;
 import java.util.*;
 
 public class CollectionTestSuite {
@@ -39,11 +39,11 @@ public class CollectionTestSuite {
     @Test
     public void testOddNumbersExterminatorNormalList() {
         //Given
-        OddNumbersExterminator numbers = new OddNumbersExterminator();
+        OddNumbersExterminator normal = new OddNumbersExterminator();
         //When
-        `
-        System.out.println("Test normal list: " + numbers.exterminate(new ArrayList<Integer>()));
-        //Then
+        normal.exterminate(new ArrayList<Integer>());
 
+        System.out.println(normal.numbers);
+        //Then
     }
 }
