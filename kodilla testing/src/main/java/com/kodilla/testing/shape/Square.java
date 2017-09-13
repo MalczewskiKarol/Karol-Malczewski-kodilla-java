@@ -2,8 +2,18 @@ package com.kodilla.testing.shape;
 
 public class Square implements Shape {
 
-    String shapeName = "Square";
-    int field = 6;
+    String shapeName;
+    int field;
+
+    public String shapeName() {
+
+        return "Square";
+    }
+
+    public int field() {
+
+        return 3;
+    }
 
     public Square(String shapeName, int field) {
         this.shapeName = shapeName;

@@ -5,17 +5,25 @@ public class Triangle implements Shape {
     String shapeName;
     int field;
 
+    public String shapeName() {
+
+        return "Triangle";
+    }
+
+    public int field() {
+
+        return 4;
+    }
+
     public Triangle(String shapeName, int field) {
         this.shapeName = shapeName;
         this.field = field;
     }
 
-    @Override
     public String getShapeName() {
         return shapeName;
     }
 
-    @Override
     public int getField() {
         return field;
     }

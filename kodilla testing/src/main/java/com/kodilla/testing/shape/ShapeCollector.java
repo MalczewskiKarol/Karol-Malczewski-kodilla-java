@@ -5,17 +5,16 @@ public class ShapeCollector {
     private String shapeName;
     private int field;
 
-    private ArrayList<ShapeCollector> shapes = new ArrayList<ShapeCollector>();
-
+    private ArrayList<Shape> figures = new ArrayList<Shape>();
 
     public ShapeCollector(String shapeName, int field) {
         this.shapeName = shapeName;
         this.field = field;
-
     }
 
-    public static void addFigure(Shape shape) {
-        //pusto
+
+    public void addFigure(Shape shape) {
+
     }
 
     public boolean removeFigure(Shape shape) {
@@ -23,23 +22,14 @@ public class ShapeCollector {
         return true;
     }
 
-    public ShapeCollector getFigure(int n) {
-        //pusto
-        return figure;
-    }
-
-    public showFigures() {
+    public ArrayList<Shape> getFigures(int n) {
         //pusto
         return figures;
     }
 
-    public String getShapeName() {
-        return shapeName;
-    }
+    public ArrayList<Shape> showFigures() {
 
-    public int getField() {
-        return field;
+        return figures;
     }
-
 
 }
