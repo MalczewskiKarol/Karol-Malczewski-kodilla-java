@@ -13,17 +13,19 @@ public class ShapeCollector {
     }
 
 
-    public void addFigure(Shape shape) {
+    public static void addFigure(Shape shape) {
+
 
     }
 
-    public boolean removeFigure(Shape shape) {
-        //pusto
+    public static boolean removeFigure(Shape shape) {
+
+
         return true;
     }
 
     public ArrayList<Shape> getFigures(int n) {
-        //pusto
+
         return figures;
     }
 

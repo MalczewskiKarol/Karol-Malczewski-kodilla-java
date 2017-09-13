@@ -18,7 +18,7 @@ public class ShapeCollectorTestSuite {
     }
 
     @Before
-    public static void beforeEveryTest() {
+    public void beforeEveryTest() {
         testCounter++;
         System.out.println("Preparing for execute test #" + testCounter);
     }
@@ -26,15 +26,54 @@ public class ShapeCollectorTestSuite {
     @Test
     public void testAddFigure() {
         //Given
-        ShapeCollector newShape = new ShapeCollector("Square", 3);
+        ShapeCollector shapeCollector1 = new ShapeCollector("Square", 3);
+        Circle circle = new Circle("Circle", 5);
         //When
-        String result = newShape.addFigure(Shape, shape);
+        shapeCollector1.addFigure(circle);
         //Then
-        Assert.assertEquals("Square" , result);
+        Assert.assertEquals(1, shapeCollector1.getFigures(1));
     }
 
     @Test
     public void testRemoveFigure() {
         //Given
+        ShapeCollector shapeCollector = new ShapeCollector("Square", 3);
+        Triangle triangle = new Triangle("Triangle", 4);
+        shapeCollector.addFigure(triangle);
+        //When
+       boolean result = ShapeCollector.removeFigure(triangle);
+        //Then
+        Assert.assertTrue(result);
+        Assert.assertEquals(0, shapeCollector.getFigures(0));
+    }
+
+    @Test
+    public void testGetFigure() {
+        //Given
+        ShapeCollector shapeCollector = new ShapeCollector("Square", 3);
+        Square square = new Square("Square", 3);
+        shapeCollector.addFigure(square);
+        //When
+        ArrayList<Shape> retrievedFigure;
+        retrievedFigure = shapeCollector.getFigures(0);
+        //Then
+        Assert.assertEquals(square, retrievedFigure);
+    }
+
+    @Test
+    public void testShowFigures() {
+        //Given
+        ShapeCollector shapeCollector = new ShapeCollector("Square", 3);
+        Square square = new Square("Square", 3);
+        Triangle triangle = new Triangle("Triangle", 4);
+        Circle circle = new Circle("Circle", 5);
+        shapeCollector.addFigure(square);
+        shapeCollector.addFigure(triangle);
+        shapeCollector.addFigure(circle);
+        //When
+        ArrayList<Shape> showedFigure;
+        showedFigure = shapeCollector.showFigures();
+        //Then
+        Assert.assertEquals(3, showedFigure);
     }
 }
