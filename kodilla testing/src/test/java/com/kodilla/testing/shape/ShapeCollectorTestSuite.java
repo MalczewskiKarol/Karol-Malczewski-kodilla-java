@@ -2,8 +2,10 @@ package com.kodilla.testing.shape;
 
 import com.sun.xml.internal.ws.api.server.SDDocument;
 import org.junit.*;
+import sun.security.provider.SHA;
 
 import java.util.ArrayList;
+import static com.kodilla.testing.shape.ShapeCollector.figures;
 
 public class ShapeCollectorTestSuite {
     private static int testCounter = 0;
@@ -32,7 +34,7 @@ public class ShapeCollectorTestSuite {
         //When
         shapeCollector.addFigure(circle);
         //Then
-        Assert.assertEquals(1, shapeCollector.getFigure(1));
+        Assert.assertTrue(figures.add(circle));
     }
 
     @Test
@@ -42,10 +44,9 @@ public class ShapeCollectorTestSuite {
         Triangle triangle = new Triangle("Triangle", 4);
         shapeCollector.addFigure(triangle);
         //When
-       boolean result = ShapeCollector.removeFigure(triangle);
+       boolean result = shapeCollector.removeFigure(triangle);
         //Then
         Assert.assertTrue(result);
-        Assert.assertEquals(0, shapeCollector.getFigure(0));
     }
 
     @Test
@@ -55,10 +56,10 @@ public class ShapeCollectorTestSuite {
         Square square = new Square("Square", 3);
         shapeCollector.addFigure(square);
         //When
-        ArrayList<Shape> retrievedFigure;
-        retrievedFigure = shapeCollector.getFigure(0);
+        Shape retrievedFigure = shapeCollector.getFigure(0);
         //Then
-        Assert.assertEquals(square, retrievedFigure);
+        Assert.assertEquals(retrievedFigure, square);
+
     }
 
     @Test
@@ -75,6 +76,6 @@ public class ShapeCollectorTestSuite {
         ArrayList<Shape> showedFigure;
         showedFigure = shapeCollector.showFigures();
         //Then
-        Assert.assertEquals(3, showedFigure);
+        Assert.assertEquals(figures, showedFigure);
     }
 }

@@ -2,8 +2,8 @@ package com.kodilla.testing.shape;
 import java.util.*;
 
 public class ShapeCollector {
-    private static String shapeName;
-    private static int field;
+    private  String shapeName;
+    private  int field;
 
     public static ArrayList<Shape> figures = new ArrayList<Shape>();
 
@@ -13,27 +13,17 @@ public class ShapeCollector {
     }
 
 
-    public static void addFigure(Shape shape) {
-        ShapeCollector shapeCollector = new ShapeCollector(shapeName, field);
-        figures.add((com.kodilla.testing.shape.Shape) shapeCollector);
+    public void addFigure(Shape shape) {
+        figures.add(shape);
     }
 
-    public static boolean removeFigure(Shape shape) {
-        boolean result = false;
-        if(figures.contains(shape)) {
-            figures.remove(shape);
-            result = true;
-        }
-        return result;
+    public boolean removeFigure(Shape shape) {
+            return figures.remove(shape);
     }
 
-    public ArrayList<Shape> getFigure(int n) {
-        Shape theFigure = null;
-        if(n >= 0 && n < figures.size()) {
-            theFigure = figures.get(n);
-        }
+    public Shape getFigure(int n) {
 
-        return (ArrayList<Shape>) theFigure;
+        return figures.get(n);
     }
 
     public ArrayList<Shape> showFigures() {
