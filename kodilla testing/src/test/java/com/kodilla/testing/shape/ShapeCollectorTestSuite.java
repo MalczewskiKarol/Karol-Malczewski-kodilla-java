@@ -1,5 +1,6 @@
 package com.kodilla.testing.shape;
 
+import com.sun.xml.internal.ws.api.server.SDDocument;
 import org.junit.*;
 
 import java.util.ArrayList;
@@ -26,12 +27,12 @@ public class ShapeCollectorTestSuite {
     @Test
     public void testAddFigure() {
         //Given
-        ShapeCollector shapeCollector1 = new ShapeCollector("Square", 3);
+        ShapeCollector shapeCollector = new ShapeCollector("Square", 3);
         Circle circle = new Circle("Circle", 5);
         //When
-        shapeCollector1.addFigure(circle);
+        shapeCollector.addFigure(circle);
         //Then
-        Assert.assertEquals(1, shapeCollector1.getFigures(1));
+        Assert.assertEquals(1, shapeCollector.getFigure(1));
     }
 
     @Test
@@ -44,7 +45,7 @@ public class ShapeCollectorTestSuite {
        boolean result = ShapeCollector.removeFigure(triangle);
         //Then
         Assert.assertTrue(result);
-        Assert.assertEquals(0, shapeCollector.getFigures(0));
+        Assert.assertEquals(0, shapeCollector.getFigure(0));
     }
 
     @Test
@@ -55,7 +56,7 @@ public class ShapeCollectorTestSuite {
         shapeCollector.addFigure(square);
         //When
         ArrayList<Shape> retrievedFigure;
-        retrievedFigure = shapeCollector.getFigures(0);
+        retrievedFigure = shapeCollector.getFigure(0);
         //Then
         Assert.assertEquals(square, retrievedFigure);
     }

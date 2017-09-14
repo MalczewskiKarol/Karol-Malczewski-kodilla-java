@@ -2,10 +2,10 @@ package com.kodilla.testing.shape;
 import java.util.*;
 
 public class ShapeCollector {
-    private String shapeName;
-    private int field;
+    private static String shapeName;
+    private static int field;
 
-    private ArrayList<Shape> figures = new ArrayList<Shape>();
+    public static ArrayList<Shape> figures = new ArrayList<Shape>();
 
     public ShapeCollector(String shapeName, int field) {
         this.shapeName = shapeName;
@@ -14,24 +14,30 @@ public class ShapeCollector {
 
 
     public static void addFigure(Shape shape) {
-
-
+        ShapeCollector shapeCollector = new ShapeCollector(shapeName, field);
+        figures.add((com.kodilla.testing.shape.Shape) shapeCollector);
     }
 
     public static boolean removeFigure(Shape shape) {
-
-
-        return true;
+        boolean result = false;
+        if(figures.contains(shape)) {
+            figures.remove(shape);
+            result = true;
+        }
+        return result;
     }
 
-    public ArrayList<Shape> getFigures(int n) {
+    public ArrayList<Shape> getFigure(int n) {
+        Shape theFigure = null;
+        if(n >= 0 && n < figures.size()) {
+            theFigure = figures.get(n);
+        }
 
-        return figures;
+        return (ArrayList<Shape>) theFigure;
     }
 
     public ArrayList<Shape> showFigures() {
 
         return figures;
     }
-
 }
