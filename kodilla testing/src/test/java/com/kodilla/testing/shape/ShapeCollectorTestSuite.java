@@ -1,9 +1,6 @@
 package com.kodilla.testing.shape;
 
-import com.sun.xml.internal.ws.api.server.SDDocument;
 import org.junit.*;
-import sun.security.provider.SHA;
-
 import java.util.ArrayList;
 import static com.kodilla.testing.shape.ShapeCollector.figures;
 

@@ -4,6 +4,13 @@ import java.util.*;
 
 public class AdvStatistics implements Statistics {
 
+    Statistics statistics;
+    public AdvStatistics calculateAdvStatistics;
+
+    public AdvStatistics(Statistics statistics) {
+        this.statistics = statistics;
+    }
+
     public int postsCount() {
         return  postsCount;
     }
@@ -24,20 +31,14 @@ public class AdvStatistics implements Statistics {
         return userNames;
     }
 
-    Statistics statistics;
-
-    public AdvStatistics(Statistics statistics) {
-        this.statistics = statistics;
-    }
-
     public void calculateAdvStatistics(Statistics statistics) {
 
-        userNamesCount = statistics.userNames().size();
-        postsCount = statistics.postsCount();
-        commentsCount = statistics.commentsCount();
-        resultUsersPosts = postsCount / userNamesCount;
-        resultCommentsUsers = statistics.commentsCount() / userNamesCount;
-        resultCommentsPosts = statistics.commentsCount() / postsCount;
+        int userNamesCount = statistics.userNames().size();
+        int postsCount = statistics.postsCount();
+        int commentsCount = statistics.commentsCount();
+        int resultUsersPosts = postsCount / userNamesCount;
+        int resultCommentsUsers = statistics.commentsCount() / userNamesCount;
+        int resultCommentsPosts = statistics.commentsCount() / postsCount;
     }
 
 //    public void showStatistics() {
