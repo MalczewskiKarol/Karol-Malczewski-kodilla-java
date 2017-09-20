@@ -5,14 +5,14 @@ import java.time.LocalDate;
 public final class ForumUser {
     private final int idNumber;
     private final String nickName;
-    private char sex;
+    private final char sex;
     private final LocalDate dateOfBirth;
     private final int postsCount;
 
     public ForumUser(final int idNumber, final String nickName, final char sex, final int yearOfBirth, final int monthOfBirth, final int dayOfBirth, final int postsCount) {
         this.idNumber = idNumber;
         this.nickName = nickName;
-        this.sex = sex;
+        this.sex = 'M'/'F';
         this.dateOfBirth = LocalDate.of(yearOfBirth, monthOfBirth, dayOfBirth);
         this.postsCount = postsCount;
     }
