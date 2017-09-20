@@ -45,6 +45,6 @@ public class WorldTestSuite {
         //Then
         BigDecimal expectedQuantity = new BigDecimal("888054473936159");
         Assert.assertEquals( totalPeopleQuantity, expectedQuantity);
-        System.out.println("Number of people on planet Earth: " + totalPeopleQuantity);
+        System.out.println("World population clock: " + totalPeopleQuantity);
     }
 }
