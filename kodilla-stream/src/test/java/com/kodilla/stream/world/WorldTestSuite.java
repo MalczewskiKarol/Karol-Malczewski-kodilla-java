@@ -39,9 +39,7 @@ public class WorldTestSuite {
         continents.add(world);
 
         //When
-        BigDecimal totalPeopleQuantity = continents.stream()
-                .map(World::getPeopleQuantity)
-                .reduce(BigDecimal.ZERO, (sum, current) -> sum = sum.add(current));
+        BigDecimal totalPeopleQuantity = world.getPeopleQuantity();
         //Then
         BigDecimal expectedQuantity = new BigDecimal("888054473936159");
         Assert.assertEquals( totalPeopleQuantity, expectedQuantity);
