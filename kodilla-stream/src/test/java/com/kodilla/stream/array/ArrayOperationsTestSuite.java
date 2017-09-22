@@ -3,18 +3,17 @@ package com.kodilla.stream.array;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.stream.IntStream;
-
 public class ArrayOperationsTestSuite {
     @Test
     public void testGetAverage() {
         //Given
-        IntStream.range(0, 21)
-                .forEach(System.out::println);
+        int[] numbers = new int[20];
+
         //When
-        IntStream.range(0, 21)
-                .average();
+        double result = ArrayOperations.getAverage(numbers);
+
         //Then
-        Assert.assertEquals(10.0, IntStream.range(0, 21).average());
+        Assert.assertEquals(10, result);
+
     }
 }
