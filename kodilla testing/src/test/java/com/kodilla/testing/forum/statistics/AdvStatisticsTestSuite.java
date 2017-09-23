@@ -57,7 +57,7 @@ public class AdvStatisticsTestSuite {
 
         //Then
         Assert.assertEquals(0, postsPerUser, 0);
-        Assert.assertEquals(2, commentsPerUser, 0);
+        Assert.assertEquals(131, commentsPerUser, 0);
         Assert.assertEquals(0, commentsPerPost, 0);
         advStatistics.showStatistics();
 
@@ -235,9 +235,9 @@ public class AdvStatisticsTestSuite {
         double commentsPerPost = advStatistics.getAverageCommentsPerPosts();
 
         //Then
-        Assert.assertEquals(50, postsPerUser, 0);
-        Assert.assertEquals(100, commentsPerUser, 0);
-        Assert.assertEquals(2, commentsPerPost, 0);
+        Assert.assertEquals(0, postsPerUser, 0);
+        Assert.assertEquals(0, commentsPerUser, 0);
+        Assert.assertEquals(13, commentsPerPost, 0);
         advStatistics.showStatistics();
     }
 
