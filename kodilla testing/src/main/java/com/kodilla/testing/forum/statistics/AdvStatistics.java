@@ -4,6 +4,8 @@ import java.util.*;
 
 public class AdvStatistics implements Statistics {
 
+    int commentsCount;
+    int postsCount;
     int numberOfUsers;
     int numberOfPosts;
     int numberOfComments;
@@ -16,22 +18,28 @@ public class AdvStatistics implements Statistics {
     }
 
     public int postsCount() {
-        return numberOfPosts;
-    }
-//dodalem sam returna w postach i komentarzach
-    public int commentsCount() {
-        return numberOfComments;
+        if(postsCount() == 0) {
+            int postsCount = getNumberOfPosts();
+        }
+        return getNumberOfPosts();
     }
 
-    public int getnumberOfUsers() {
+    public int commentsCount() {
+        if(commentsCount() == 0) {
+            int commentsCount = getNumberOfComments();
+        }
+        return getNumberOfComments();
+    }
+
+    public int getNumberOfUsers() {
         return numberOfUsers;
     }
 
-    public int getnumberOfPosts() {
+    public int getNumberOfPosts() {
         return numberOfPosts;
     }
 
-    public int getnumberOfComments() {
+    public int getNumberOfComments() {
         return numberOfComments;
     }
 
@@ -52,8 +60,19 @@ public class AdvStatistics implements Statistics {
         this.numberOfPosts = statistics.postsCount();
         this.numberOfComments = statistics.commentsCount();
         this.averagePostsPerUser = statistics.postsCount() / statistics.userNames().size();
-        this.averageCommentsPerUser = statistics.postsCount() / statistics.userNames().size();
+        this.averageCommentsPerUser = statistics.commentsCount() / statistics.userNames().size();
         this.averageCommentsPerPosts = statistics.commentsCount() / statistics.postsCount();
+
+    }
+
+    public void showStatistics() {
+        System.out.println("number of users: " + numberOfUsers);
+        System.out.println("number of posts: " + numberOfPosts);
+        System.out.println("number of comments: " + numberOfComments);
+        System.out.println("average posts/users: " + averagePostsPerUser);
+        System.out.println("average comments/users: " + averageCommentsPerUser);
+        System.out.println("average comments/posts: " + averageCommentsPerPosts);
+
 
     }
 }
