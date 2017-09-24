@@ -15,6 +15,7 @@ public class ArrayOperationsTestSuite {
 
         //Then
         Assert.assertEquals(38.1, result, 0);
+        System.out.println("\n"  + "Average: " + result);
 
     }
 }
