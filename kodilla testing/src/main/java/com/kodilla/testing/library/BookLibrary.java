@@ -24,8 +24,14 @@ public class BookLibrary {
 
     public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
 
-        List<Book> bookInHandList = new ArrayList<Book>();
-        Book book = new Book("title", "author", 1990);
-        return bookInHandList;
+        List<Book> emptyBookInHandList = new ArrayList<Book>();
+        if(libraryDatabase.listBooksInHandsOf(libraryUser).size() == 0)
+            return emptyBookInHandList;
+
+        List<Book> resultList = libraryDatabase.listBooksInHandsOf(libraryUser);
+        if(resultList.size() > 5) return emptyBookInHandList;
+
+        emptyBookInHandList = resultList;
+        return resultList;
     }
 }
