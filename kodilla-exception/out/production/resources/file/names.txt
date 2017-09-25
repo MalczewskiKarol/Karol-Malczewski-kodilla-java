@@ -2,5 +2,3 @@ Janusz
 Helena
 Grażynka
 Sebastian
-
-D:\Program Files (x86)\development\kodilla-course\kodilla-exception\out\production\resources\file\names.txt
