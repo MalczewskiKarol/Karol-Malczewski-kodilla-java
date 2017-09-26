@@ -148,7 +148,6 @@ public class BoardTestSuite {
         //When
         List<TaskList> doneTasks = new ArrayList<>();
         doneTasks.add(new TaskList("In progress"));
-        doneTasks.add(new TaskList("Done"));
         double days = project.getTaskLists().stream()
                 .filter(doneTasks::contains)
                 .flatMap(tl -> tl.getTasks().stream())
