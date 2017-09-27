@@ -5,15 +5,20 @@ import java.util.HashMap;
 public class FlightManager {
 
     HashMap<String, Boolean> findFlight (Flight flight) throws Exception {
+
         HashMap<String, Boolean> flightMap = new HashMap<>();
-        flightMap.put("Gdansk" + "Berlin", true);
-        flightMap.put("Poznan" + "Warsaw", true);
-        flightMap.put("Warsaw" + "Radom", false);
 
-        if(flightMap.containsValue(false)) {
+        flightMap.put("Warszawa" + "Gdansk", true);
+        flightMap.put("Radom" + "Lublin", false);
+        flightMap.put("Poznan" + "Krakow", true);
+        flightMap.put("Warszawa" + "Berlin", true);
 
-            throw new RouteNotFoundException("Radom airport is not available.");
+        if(flight.departureAirport.contains("Radom"))
+
+        {
+            throw new RouteNotFoundException(flight + " is not available.");
         }
+
         return flightMap;
     }
 }
