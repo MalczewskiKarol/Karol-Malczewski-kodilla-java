@@ -13,11 +13,19 @@ public class FlightManager {
         flightMap.put("Poznan" + "Krakow", true);
         flightMap.put("Warszawa" + "Berlin", true);
 
-        if(flight.departureAirport.contains("Radom"))
+        Boolean aBoolean = flightMap.get(flight.getDepartureAirport());
+
+        if(aBoolean == null && !aBoolean)
 
         {
             throw new RouteNotFoundException(flight + " is not available.");
         }
+
+//        if(flight.departureAirport.contains("Radom"))
+//
+//        {
+//            throw new RouteNotFoundException(flight + " is not available.");
+//        }
 
         return flightMap;
     }

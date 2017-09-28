@@ -30,15 +30,5 @@ public class MovieStore {
 
 //        Map<String, List<String>> booktitles = booksTitlesWithTranslations.entrySet().stream()
 //                .flatMap(getMovies().entrySet())
-//                .collect(Collectors.toList());
-
-
-
-
-
-
-//                .collect(Collectors.joining("!", "<<", ">>"));
-
-
     }
 }
