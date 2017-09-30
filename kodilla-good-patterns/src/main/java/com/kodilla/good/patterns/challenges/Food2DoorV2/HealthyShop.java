@@ -1,10 +1,10 @@
-package com.kodilla.good.patterns.challenges.Food2Door;
+package com.kodilla.good.patterns.challenges.Food2DoorV2;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
 
-public class HealthyShop {
-    public FoodOrderRequest request() {
+public class HealthyShop implements Producer {
+    public Order process() {
         Partner partner = new Partner("Healthy Shop", "ul. Prosta 6 / 00-951 Warszawa");
 
         LocalDateTime requestDate = LocalDateTime.of(2017, 9, 5, 13, 21);
@@ -14,6 +14,6 @@ public class HealthyShop {
         productList.put("Meat", 220);
         productList.put("Sausage", 150);
 
-        return new FoodOrderRequest(partner, requestDate, productList);
+        return new Order(partner, requestDate, productList);
     }
 }

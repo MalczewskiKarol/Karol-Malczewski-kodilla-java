@@ -1,11 +1,8 @@
-package com.kodilla.good.patterns.challenges.Food2Door;
-
-import java.util.List;
-import java.util.Map;
+package com.kodilla.good.patterns.challenges.Food2DoorV2;
 
 public class Partner {
-    private String companyName;
-    private String adress;
+    public String companyName;
+    public String adress;
 
     public Partner(final String companyName, final String adress) {
         this.companyName = companyName;

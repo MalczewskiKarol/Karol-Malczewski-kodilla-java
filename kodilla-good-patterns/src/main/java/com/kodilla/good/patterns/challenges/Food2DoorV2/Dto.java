@@ -1,10 +1,10 @@
-package com.kodilla.good.patterns.challenges.Food2Door;
+package com.kodilla.good.patterns.challenges.Food2DoorV2;
 
-public class FoodOrderDto {
+public class Dto {
     public Partner partner;
     public boolean isOrdered;
 
-    public FoodOrderDto(final Partner partner, final boolean isOrdered) {
+    public Dto(final Partner partner, final boolean isOrdered) {
         this.partner = partner;
         this.isOrdered = isOrdered;
     }
