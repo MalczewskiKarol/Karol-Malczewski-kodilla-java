@@ -4,15 +4,12 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 
 public class Order {
-    private Partner partner;
     private LocalDateTime requestDate;
     private HashMap<String, Integer> productList;
 
-    public Order(final Partner partner, final LocalDateTime requestDate, final HashMap<String, Integer> productList) {
-    }
-
-    public Partner getPartner() {
-        return partner;
+    public Order(final LocalDateTime requestDate, final HashMap<String, Integer> productList) {
+        this.requestDate = requestDate;
+        this.productList = productList;
     }
 
     public LocalDateTime getRequestDate() {

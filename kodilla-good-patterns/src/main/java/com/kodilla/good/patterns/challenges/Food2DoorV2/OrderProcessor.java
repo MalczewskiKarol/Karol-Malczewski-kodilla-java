@@ -1,5 +1,8 @@
 package com.kodilla.good.patterns.challenges.Food2DoorV2;
 
+import java.time.LocalDateTime;
+import java.util.HashMap;
+
 public class OrderProcessor {
     private Producer producer;
     private Information information;
@@ -9,7 +12,9 @@ public class OrderProcessor {
         this.information = information;
     }
 
-    public Producer process(Order order) {
-        return process(order);
+    public OrderDto process(Order order) {
+
+        return new OrderDto(producer, true);
+
     }
 }

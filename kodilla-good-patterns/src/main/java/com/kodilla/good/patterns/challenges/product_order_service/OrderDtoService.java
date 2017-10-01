@@ -1,10 +1,10 @@
 package com.kodilla.good.patterns.challenges.product_order_service;
 
-public class OrderDto {
+public class OrderDtoService {
     public User user;
     public boolean isOrdered;
 
-    public OrderDto(final User user, final boolean isOrdered) {
+    public OrderDtoService(final User user, final boolean isOrdered) {
         this.user = user;
         this.isOrdered = isOrdered;
     }
