@@ -10,9 +10,14 @@ public class OrderProcessor {
     }
 
     public OrderDto process(final Order order) {
+        boolean isProcessed = producer.process();
 
-        return new OrderDto(producer, true);
-
+        if(isProcessed) {
+            return new OrderDto(producer, true);
+        } else {
+            return new OrderDto(producer, false);
+        }
 
     }
+
 }

@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class GlutenFreeShop implements Producer {
 
-    public Order process() {
+    public boolean process() {
 
         LocalDateTime requestDate = LocalDateTime.of(2017, 8, 29, 14, 17);
 
@@ -14,6 +14,6 @@ public class GlutenFreeShop implements Producer {
         productList.put("Roll", 2700);
         productList.put("Flour", 50);
 
-        return new Order(requestDate, productList);
+        return true;
     }
 }

@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class HealthyShop implements Producer {
 
-    public Order process() {
+    public boolean process() {
 
         LocalDateTime requestDate = LocalDateTime.of(2017, 9, 5, 13, 21);
 
@@ -14,6 +14,6 @@ public class HealthyShop implements Producer {
         productList.put("Meat", 220);
         productList.put("Sausage", 150);
 
-        return new Order(requestDate, productList);
+        return true;
     }
 }
