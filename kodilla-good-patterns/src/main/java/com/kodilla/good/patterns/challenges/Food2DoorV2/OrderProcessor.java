@@ -17,7 +17,6 @@ public class OrderProcessor {
         } else {
             return new OrderDto(producer, false);
         }
-
     }
 
 }
