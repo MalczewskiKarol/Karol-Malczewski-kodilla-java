@@ -27,7 +27,5 @@ public class MovieStore {
 
         return booksTitlesWithTranslations;
 
-//        Map<String, List<String>> booktitles = booksTitlesWithTranslations.entrySet().stream()
-//                .flatMap(getMovies().entrySet())
     }
 }

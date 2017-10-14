@@ -9,11 +9,7 @@ public class StreamMain {
         MovieStore movieStore = new MovieStore();
         movieStore.getMovies().entrySet().stream()
                 .map(t -> t.toString())
-                .collect(Collectors.toList()).stream()
-
                 .forEach(System.out::println);
-//                .collect(Collectors.joining("!", "<<", ">>"));
-//                System.out.println(movieStore);
 
 
 

@@ -12,7 +12,7 @@ public class DrawerTestSuite {
         Drawer drawer = new Drawer(circle);
         String result = drawer.doDrawing();
         //Then
-        Assert.assertEquals("This is a circle", result);
+        Assert.assertEquals("This is a Circle", result);
     }
 
     @Test
@@ -23,6 +23,6 @@ public class DrawerTestSuite {
         Drawer drawer = new Drawer(triangle);
         String result = drawer.doDrawing();
         //Then
-        Assert.assertEquals("This is a triangle", result);
+        Assert.assertEquals("This is a Triangle", result);
     }
 }
