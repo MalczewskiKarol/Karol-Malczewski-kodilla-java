@@ -1,8 +1,5 @@
 package com.kodilla.spring.portfolio;
 
-import org.springframework.stereotype.Service;
-
-
 public final class Board {
     TaskList theList;
 
