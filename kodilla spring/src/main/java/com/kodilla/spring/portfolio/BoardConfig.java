@@ -13,11 +13,13 @@ public class BoardConfig {
 
     @Autowired
     @Qualifier("FirstList")
-    TaskList taskList;
+    TaskList toDoList;
+    TaskList inProgressList;
+    TaskList doneList;
 
     @Bean
     public Board getBoard() {
-        return new Board(taskList);
+        return new Board(toDoList, inProgressList, doneList);
     }
 
     @Bean(name = "FirstList")
