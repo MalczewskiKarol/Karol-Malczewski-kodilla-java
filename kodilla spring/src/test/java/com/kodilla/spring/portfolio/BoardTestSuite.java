@@ -13,21 +13,17 @@ public class BoardTestSuite {
         //Given
         ApplicationContext context = new AnnotationConfigApplicationContext(BoardConfig.class);
 
-        List<String> toDoList = new ArrayList<>();
-        List<String> inProgressList = new ArrayList<>();
-        List<String> doneList = new ArrayList<>();
-
         //When
         Board board = context.getBean(Board.class);
 
-        board.toDoList.tasks.add("job#1");
-//        board.inProgressList.tasks.add("job2");
-//        board.doneList.tasks.add("job#3");
+        board.toDoList.tasks.add("task to do");
+        board.inProgressList.tasks.add("task in progress");
+        board.doneList.tasks.add("done task");
 
         //Then
         System.out.println(board.toDoList.tasks);
-//        System.out.println(board.inProgressList.tasks);
-//        System.out.println(board.doneList.tasks);
+        System.out.println(board.inProgressList.tasks);
+        System.out.println(board.doneList.tasks);
 
     }
 }
