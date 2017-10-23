@@ -35,15 +35,16 @@ public class LibraryTestSuite {
         }
 
         //When
+        library.getBooks().clear();
         //Then
-        Assert.assertEquals(5, library.getBooks().size());
-        Assert.assertEquals(5, clonedBooks.getBooks().size());
+        Assert.assertEquals(0, library.getBooks().size());
+        Assert.assertEquals(0, clonedBooks.getBooks().size());
         Assert.assertEquals(5, deepClonedBooks.getBooks().size());
         System.out.println(library.name + "\n" + library.getBooks());
         System.out.println("==========");
         System.out.println(clonedBooks.name + "\n" + clonedBooks.getBooks());
         System.out.println("==========");
-        System.out.println(deepClonedBooks.name + "\n" + clonedBooks.getBooks());
+        System.out.println(deepClonedBooks.name + "\n" + deepClonedBooks.getBooks());
 
     }
 }
