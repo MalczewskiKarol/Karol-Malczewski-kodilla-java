@@ -7,6 +7,6 @@ public class App {
     public static void main(String[] args) throws java.lang.Exception {
 
         HashMap<StartAirport, EndAirport> flightsMap = new HashMap<>();
-        flightsMap.put("Krakow", "Gdansk");
+//        flightsMap.put("Krakow", "Gdansk");
     }
 }
