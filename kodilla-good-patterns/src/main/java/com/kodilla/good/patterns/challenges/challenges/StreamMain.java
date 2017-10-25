@@ -8,9 +8,5 @@ public class StreamMain {
         movieStore.getMovies().entrySet().stream()
                 .map(t -> t.toString())
                 .forEach(System.out::println);
-
-
-
-
     }
 }
