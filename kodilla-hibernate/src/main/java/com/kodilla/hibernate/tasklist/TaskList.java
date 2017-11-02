@@ -16,11 +16,10 @@ public final class TaskList {
         this.description = description;
     }
 
-
     @Id
     @GeneratedValue
     @NotNull
-    @Column(name = "Id", unique = true)
+    @Column(name = "ID", unique = true)
     public int getId() {
         return id;
     }

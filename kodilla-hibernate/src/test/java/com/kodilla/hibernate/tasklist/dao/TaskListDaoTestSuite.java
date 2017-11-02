@@ -14,12 +14,12 @@ import java.util.List;
 public class TaskListDaoTestSuite {
     @Autowired
     private TaskListDao taskListDao;
-    private static String LISTNAME = "TO DO";
+    private static final String DESCRIPTION = "TASKS TO DO";
 
     @Test
     public void testFindByListName() {
         //Given
-        TaskList taskList = new TaskList(LISTNAME, "TASKS TO DO");
+        TaskList taskList = new TaskList("TO DO", DESCRIPTION);
         taskListDao.save(taskList);
         String listName = taskList.getListName();
 
