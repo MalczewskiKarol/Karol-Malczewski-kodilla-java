@@ -24,7 +24,7 @@ public class TaskListDaoTestSuite {
         String listName = taskList.getListName();
 
         //When
-        List<TaskList> readTaskList = taskListDao.findByName(listName);
+        List<TaskList> readTaskList = taskListDao.findByListName(listName);
 
         //Then
         Assert.assertEquals(1, readTaskList.size());

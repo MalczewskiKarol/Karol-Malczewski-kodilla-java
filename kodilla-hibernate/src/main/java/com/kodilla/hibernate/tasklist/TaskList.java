@@ -10,8 +10,10 @@ public final class TaskList {
     private String listName;
     private String description;
 
+    public TaskList() {
+    }
+
     public TaskList(String listName, String description) {
-        this.id = id;
         this.listName = listName;
         this.description = description;
     }
@@ -34,15 +36,15 @@ public final class TaskList {
         return description;
     }
 
-    public void setId(int id) {
+    private void setId(int id) {
         this.id = id;
     }
 
-    public void setListName(String listName) {
+    private void setListName(String listName) {
         this.listName = listName;
     }
 
-    public void setDescription(String description) {
+    private void setDescription(String description) {
         this.description = description;
     }
 }
