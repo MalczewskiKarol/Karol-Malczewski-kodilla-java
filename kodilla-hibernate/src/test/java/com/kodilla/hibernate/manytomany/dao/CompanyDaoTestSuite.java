@@ -35,7 +35,7 @@ public class CompanyDaoTestSuite {
         johnSmith.getCompanies().add(softwareMachine);
         johnSmith.getCompanies().add(greyMatter);
         stephanieClarkson.getCompanies().add(dataMaesters);
-        lindaKovalsky.getCompanies().add(greyMatter);
+        lindaKovalsky.getCompanies().add(dataMaesters);
         lindaKovalsky.getCompanies().add(greyMatter);
 
         //When
@@ -52,12 +52,12 @@ public class CompanyDaoTestSuite {
         Assert.assertNotEquals(0, greyMatterId);
 
         //CleanUp
-//        try {
-//            companyDao.delete(softwareMachineId);
-//            companyDao.delete(dataMaestersId);
-//            companyDao.delete(greyMatterId);
-//        } catch (Exception e) {
-//            //do nothing
-//        }
+        try {
+            companyDao.delete(softwareMachineId);
+            companyDao.delete(dataMaestersId);
+            companyDao.delete(greyMatterId);
+        } catch (Exception e) {
+           //do nothing
+        }
     }
 }
