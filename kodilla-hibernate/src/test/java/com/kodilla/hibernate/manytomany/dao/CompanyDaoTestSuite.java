@@ -86,8 +86,8 @@ public class CompanyDaoTestSuite {
 
         //Then
         try {
-            Assert.assertEquals(companies, companyDao.retrieveByFirstThreeLetters());
-            Assert.assertEquals(employees, employeeDao.retrieveByLastName());
+            Assert.assertEquals(1, companies.size());
+            Assert.assertEquals(1, employees.size());
         } finally {
             //CleanUp
             companyDao.delete(company);
