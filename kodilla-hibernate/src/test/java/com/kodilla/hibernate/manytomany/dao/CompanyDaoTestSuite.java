@@ -80,22 +80,18 @@ public class CompanyDaoTestSuite {
         companyDao.save(company1);
 
         //When
-        List<Employee> employees = employeeDao.retrieveByLastName();
+
         List<Company> companies = companyDao.retrieveByFirstThreeLetters();
+        List<Employee> employees = employeeDao.retrieveByLastName();
 
         //Then
-        Assert.assertEquals(employees, employee);
-        Assert.assertEquals(companies, company1);
-
-        System.out.println(employees);
-        System.out.println(companies);
-
-        //CleanUp
         try {
-            companyDao.delete(companies);
-            employeeDao.delete(employees);
-        } catch (Exception e) {
-            //do nothing
+            Assert.assertEquals(companies, companyDao.retrieveByFirstThreeLetters());
+            Assert.assertEquals(employees, employeeDao.retrieveByLastName());
+        } finally {
+            //CleanUp
+            companyDao.delete(company);
+            companyDao.delete(company1);
         }
     }
 }
