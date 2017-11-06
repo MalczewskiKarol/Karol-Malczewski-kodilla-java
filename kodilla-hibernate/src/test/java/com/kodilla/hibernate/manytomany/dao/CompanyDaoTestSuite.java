@@ -73,8 +73,9 @@ public class CompanyDaoTestSuite {
         Company company = new Company("Software Machine");
         Company company1 = new Company("Grey Matter");
 
-        employeeDao.save(employee);
-        employeeDao.save(employee1);
+        company.getEmployees().add(employee);
+        company1.getEmployees().add(employee1);
+
         companyDao.save(company);
         companyDao.save(company1);
 
@@ -85,6 +86,7 @@ public class CompanyDaoTestSuite {
         //Then
         Assert.assertEquals(employees, employee);
         Assert.assertEquals(companies, company1);
+
         System.out.println(employees);
         System.out.println(companies);
 
