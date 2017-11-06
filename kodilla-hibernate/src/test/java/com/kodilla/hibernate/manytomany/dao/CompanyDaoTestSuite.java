@@ -9,11 +9,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.List;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class CompanyDaoTestSuite {
     @Autowired
     CompanyDao companyDao;
+    @Autowired
+    EmployeeDao employeeDao;
 
     @Test
     public void testSaveManyToMany() {
@@ -58,6 +62,38 @@ public class CompanyDaoTestSuite {
             companyDao.delete(greyMatterId);
         } catch (Exception e) {
            //do nothing
+        }
+    }
+
+    @Test
+    public void testNamedQuerries() {
+        //Given
+        Employee employee = new Employee("John", "Smith");
+        Employee employee1 = new Employee("Walter", "White");
+        Company company = new Company("Software Machine");
+        Company company1 = new Company("Grey Matter");
+
+        employeeDao.save(employee);
+        employeeDao.save(employee1);
+        companyDao.save(company);
+        companyDao.save(company1);
+
+        //When
+        List<Employee> employees = employeeDao.retrieveByLastName();
+        List<Company> companies = companyDao.retrieveByFirstThreeLetters();
+
+        //Then
+        Assert.assertEquals(employees, employee);
+        Assert.assertEquals(companies, company1);
+        System.out.println(employees);
+        System.out.println(companies);
+
+        //CleanUp
+        try {
+            companyDao.delete(companies);
+            employeeDao.delete(employees);
+        } catch (Exception e) {
+            //do nothing
         }
     }
 }
