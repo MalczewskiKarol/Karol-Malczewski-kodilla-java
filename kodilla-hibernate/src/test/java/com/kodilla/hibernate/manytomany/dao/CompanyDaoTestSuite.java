@@ -90,8 +90,8 @@ public class CompanyDaoTestSuite {
             Assert.assertEquals(1, employees.size());
         } finally {
             //CleanUp
-            companyDao.delete(company);
-            companyDao.delete(company1);
+//            companyDao.delete(company);
+//            companyDao.delete(company1);
         }
     }
 }
