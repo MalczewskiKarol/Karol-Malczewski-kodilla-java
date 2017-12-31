@@ -20,7 +20,7 @@ public final class Facade {
     @Autowired
     private Company company;
 
-    public void companyFinder(final Company company, final String name) throws FinderException {
+    public void companyFinder() throws FinderException {
         boolean wasError = false;
         LOGGER.info("Finding employee name...");
         if(company.getEmployees().size() == 0) {
