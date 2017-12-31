@@ -64,7 +64,7 @@ public class PizzaOrderTestSuite {
         PizzaOrder order = new BasicPizzaOrder();
         order = new ExtraCheese(order);
         order = new ExtraChicken(order);
-
+        System.out.println(order.getPrice());
         //When
         BigDecimal price = order.getPrice();
 
@@ -78,6 +78,7 @@ public class PizzaOrderTestSuite {
         PizzaOrder order = new BasicPizzaOrder();
         order = new ExtraChicken(order);
         order = new ExtraCheese(order);
+        System.out.println(order.getComponents());
 
         //When
         String components = order.getComponents();
