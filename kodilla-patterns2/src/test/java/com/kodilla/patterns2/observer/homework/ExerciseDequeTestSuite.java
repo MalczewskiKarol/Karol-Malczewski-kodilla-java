@@ -2,6 +2,8 @@ package com.kodilla.patterns2.observer.homework;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
 public class ExerciseDequeTestSuite {
     @Test
     public void testUpdate() {
@@ -19,5 +21,7 @@ public class ExerciseDequeTestSuite {
         second.addExercise("AOP Programming");
         third.addExercise("FOP Programming");
         //Then
+        assertEquals(2, adrianPażucha.getExerciseCount());
+        assertEquals(1, jarominAndrzej.getExerciseCount());
     }
 }
