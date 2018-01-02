@@ -8,20 +8,20 @@ public class ExerciseDequeTestSuite {
     @Test
     public void testUpdate() {
         //Given
-        ExerciseDeque first = new ExerciseDeque(1);
-        ExerciseDeque second = new ExerciseDeque(2);
-        ExerciseDeque third = new ExerciseDeque(3);
-        Mentor adrianPażucha = new Mentor("Adrian Pażucha");
+        ExerciseDeque first = new AopExercise();
+        ExerciseDeque second = new OopExercise();
+        ExerciseDeque third = new FunctionalExercise();
+        Mentor adrianPazucha = new Mentor("Adrian Pazucha");
         Mentor jarominAndrzej = new Mentor("Andrzej Jaromin");
-        first.registerMentor(adrianPażucha);
-        second.registerMentor(adrianPażucha);
+        first.registerMentor(adrianPazucha);
+        second.registerMentor(adrianPazucha);
         third.registerMentor(jarominAndrzej);
         //When
         first.addExercise("OOP Programming");
         second.addExercise("AOP Programming");
-        third.addExercise("FOP Programming");
+        third.addExercise("Functional Programming");
         //Then
-        assertEquals(2, adrianPażucha.getExerciseCount());
+        assertEquals(2, adrianPazucha.getExerciseCount());
         assertEquals(1, jarominAndrzej.getExerciseCount());
     }
 }

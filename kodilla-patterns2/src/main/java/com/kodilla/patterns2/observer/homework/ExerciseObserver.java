@@ -1,5 +1,5 @@
 package com.kodilla.patterns2.observer.homework;
 
-public interface ExerciseMentor {
+public interface ExerciseObserver {
     void update(ExerciseDeque exerciseDeque);
 }

@@ -1,6 +1,6 @@
 package com.kodilla.patterns2.observer.homework;
 
-public class Mentor implements ExerciseMentor {
+public class Mentor implements ExerciseObserver {
     private final String userName;
     private int exerciseCount;
 
@@ -10,7 +10,7 @@ public class Mentor implements ExerciseMentor {
 
     @Override
     public void update(ExerciseDeque exerciseDeque) {
-        System.out.println(userName + "New exercise to check. Exercise number [" + exerciseDeque.getExerciseNumber() + "]");
+        System.out.println(userName + " New exercise to check." + "\n" + "Exercises to check [" + exerciseDeque.getExercises().size() + "]");
         exerciseCount++;
     }
 
