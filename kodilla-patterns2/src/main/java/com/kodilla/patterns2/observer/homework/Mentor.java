@@ -10,7 +10,7 @@ public class Mentor implements ExerciseObserver {
 
     @Override
     public void update(ExerciseDeque exerciseDeque) {
-        System.out.println(userName + " New exercise to check." + "\n" + "Exercises to check [" + exerciseDeque.getExercises().size() + "]");
+        System.out.println(userName + " New exercise to check." + "\n" + "Exercises to check [" + getExerciseCount() + "]");
         exerciseCount++;
     }
 
