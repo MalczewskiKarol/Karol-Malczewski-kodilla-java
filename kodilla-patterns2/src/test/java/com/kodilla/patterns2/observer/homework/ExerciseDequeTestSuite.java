@@ -2,8 +2,6 @@ package com.kodilla.patterns2.observer.homework;
 
 import org.junit.Test;
 
-import java.util.Deque;
-
 import static org.junit.Assert.assertEquals;
 
 public class ExerciseDequeTestSuite {
