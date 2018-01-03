@@ -5,12 +5,14 @@ import com.kodilla.hibernate.manytomany.Employee;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import static org.junit.Assert.assertEquals;
+
 public class FacadeTestSuite {
-//    @Autowired
-//    Facade facade;
+    @Autowired
+    Facade facade;
 
     @Test
-    public void testCompanyFinder() {
+    public void testCompanyFinder() throws FinderException {
         //Given
         Employee johnSmith = new Employee("John", "Smith");
         Employee stephanieClarkson = new Employee("Stephanie", "Clarkson");
@@ -30,5 +32,9 @@ public class FacadeTestSuite {
         greyMatter.getEmployees().add(johnSmith);
 
         //When
+        facade.companyFinder(softwareMachine);
+
+        //Then
+
     }
 }
