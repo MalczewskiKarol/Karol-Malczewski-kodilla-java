@@ -20,7 +20,7 @@ public class ExerciseDequeTestSuite {
         second.addExercise("AOP Programming");
         third.addExercise("Functional Programming");
         //Then
-        assertEquals(2, adrianPazucha.getExerciseCount());
-        assertEquals(1, jarominAndrzej.getExerciseCount());
+        assertEquals(3, adrianPazucha.getExerciseCount());
+        assertEquals(2, jarominAndrzej.getExerciseCount());
     }
 }

@@ -19,6 +19,6 @@ public class Mentor implements ExerciseObserver {
     }
 
     public int getExerciseCount() {
-        return exerciseCount;
+        return exerciseCount + 1;
     }
 }

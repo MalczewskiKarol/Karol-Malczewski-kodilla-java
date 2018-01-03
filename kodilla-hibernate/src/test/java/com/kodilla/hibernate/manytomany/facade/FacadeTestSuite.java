@@ -6,8 +6,8 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class FacadeTestSuite {
-    @Autowired
-    Facade facade;
+//    @Autowired
+//    Facade facade;
 
     @Test
     public void testCompanyFinder() {
