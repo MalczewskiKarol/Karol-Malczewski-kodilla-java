@@ -17,5 +17,4 @@ public class SalaryAdapterTestSuite {
         System.out.println("Total salary: " + totalSalary + " PLN");
         assertEquals(totalSalary, 27750, 0);
     }
-
 }
