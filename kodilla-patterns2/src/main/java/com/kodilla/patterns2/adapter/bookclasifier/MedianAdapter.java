@@ -10,8 +10,8 @@ public class MedianAdapter extends MedianAdaptee implements Classifier {
     @Override
     public int publicationYearMedian(Set<BookA> bookASet) {
         Map<BookSignature, BookA> bookMap = new HashMap<>();
-        for(BookA b : bookASet) {
-            bookMap.put(new BookSignature(b.getSignature()), new BookA(b.getAuthor(), b.getTitle(), b.getPublicationYear(), b.getSignature()));
+        for(BookA bookA : bookASet) {
+            bookMap.put(new BookSignature(bookA.getSignature()), new BookA(bookA.getAuthor(), bookA.getTitle(), bookA.getPublicationYear(), bookA.getSignature()));
         }
         return medianPublicationYear(bookMap);
     }
