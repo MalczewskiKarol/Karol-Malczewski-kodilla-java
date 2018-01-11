@@ -10,13 +10,13 @@ import java.util.List;
                 name = "Company.retrieveByFirstThreeLetters",
                 query ="SELECT * FROM COMPANIES" + " WHERE COMPANY_NAME LIKE 'Gre%'",
                 resultClass = Company.class
-        ),
-        @NamedNativeQuery(
-                name = "Company.retrieveByLetter",
-                query = "SELECT * FROM COMPANIES" + " WHERE COMPANY_NAME LIKE '%a%'",
-                resultClass = Company.class
-        )
-})
+        )})
+
+@NamedQuery(
+        name = "Company.retrieveByLetter",
+        query = "FROM Company WHERE name LIKE :FRAGMENT_NAME"
+)
+
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
@@ -53,7 +53,7 @@ public class Company {
         this.name = name;
     }
 
-    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "companies")
+    @ManyToMany(cascade = CascadeType.PERSIST, mappedBy = "companies")
     public List<Employee> getEmployees() {
         return employees;
     }

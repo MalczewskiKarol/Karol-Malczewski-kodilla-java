@@ -5,14 +5,16 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-@NamedQuery(
-        name = "Employee.retrieveByLastName",
-        query = "FROM Employee WHERE lastName = 'Smith'"
-)
+@NamedQueries({
+        @NamedQuery(
+                name = "Employee.retrieveByLastName",
+                query = "FROM Employee WHERE lastName = 'Smith'"
+        )})
+
 
 @NamedNativeQuery(
-        name = "Employee.retrieveByLetter",
-        query = "SELECT * FROM EMPLOYEES" + " WHERE LASTNAME LIKE '%i%'",
+        name = "Employee.employeeByLetter",
+        query = "SELECT * FROM EMPLOYEES WHERE LASTNAME LIKE :LAST_NAME ",
         resultClass = Employee.class
 )
 
