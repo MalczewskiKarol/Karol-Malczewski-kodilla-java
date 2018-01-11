@@ -8,10 +8,9 @@ import java.util.List;
 @NamedQueries({
         @NamedQuery(
                 name = "Employee.retrieveByLastName",
-                query = "FROM Employee WHERE lastName = 'Smith'"
-        )})
-
-
+                query = "FROM Employee WHERE lastName = :LAST_NAME "
+        )
+})
 @NamedNativeQuery(
         name = "Employee.employeeByLetter",
         query = "SELECT * FROM EMPLOYEES WHERE LASTNAME LIKE :LAST_NAME ",

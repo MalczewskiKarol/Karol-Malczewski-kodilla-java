@@ -79,9 +79,12 @@ public class CompanyDaoTestSuite {
         companyDao.save(company);
         companyDao.save(company1);
 
+        int employeeId = employee.getId();
+        int employee1Id = employee1.getId();
+
         //When
-        List<Company> companies = companyDao.retrieveByFirstThreeLetters();
-        List<Employee> employees = employeeDao.retrieveByLastName();
+        List<Company> companies = companyDao.retrieveByFirstThreeLetters("Gre");
+        List<Employee> employees = employeeDao.retrieveByLastName("Smith");
 
         //Then
         try {
@@ -91,6 +94,8 @@ public class CompanyDaoTestSuite {
             //CleanUp
             companyDao.delete(company);
             companyDao.delete(company1);
+            employeeDao.delete(employeeId);
+            employeeDao.delete(employee1Id);
         }
     }
 }

@@ -8,7 +8,7 @@ import java.util.List;
 @NamedNativeQueries({
         @NamedNativeQuery(
                 name = "Company.retrieveByFirstThreeLetters",
-                query ="SELECT * FROM COMPANIES" + " WHERE COMPANY_NAME LIKE 'Gre%'",
+                query = "SELECT * FROM COMPANIES WHERE SUBSTR(company_name, 1, 3) = :FRAGMENT_NAME ",
                 resultClass = Company.class
         )})
 
