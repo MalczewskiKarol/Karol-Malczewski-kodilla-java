@@ -14,6 +14,8 @@ public class FacebookTestingApp {
     public static final String XPATH_DAY = "//span[contains(@class, \"_5k_4\")]/span/select[1]";
     public static final String XPATH_MONTH = "//span[contains(@class, \"_5k_4\")]/span/select[2]";
     public static final String XPATH_YEAR = "//span[contains(@class, \"_5k_4\")]/span/select[3]";
+    public static final String XPATH_MAN = "//span[contains(@class, \"_5k_3\")]/span[2]/input[1]";
+    public static final String XPATH_CREATE_ACCOUNT = "//div[contains(@class, \"clearfix\")]/button";
 
 
     public static void main(String[] args) {
@@ -43,6 +45,12 @@ public class FacebookTestingApp {
         WebElement year = driver.findElement(By.xpath(XPATH_YEAR));
         Select selectYear = new Select(year);
         selectYear.selectByIndex(30);
+
+        WebElement man = driver.findElement(By.xpath(XPATH_MAN));
+        man.click();
+
+        WebElement createAccount = driver.findElement(By.xpath(XPATH_CREATE_ACCOUNT));
+        createAccount.click();
 
 
 
