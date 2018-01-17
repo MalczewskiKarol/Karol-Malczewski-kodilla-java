@@ -1,15 +1,17 @@
 package com.kodilla.testing2.crudapp;
 
+import com.google.common.collect.Iterables;
 import com.kodilla.testing2.config.WebDriverConfig;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.Select;
 
+import java.security.Key;
 import java.util.Random;
+import java.util.Set;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import static junit.framework.TestCase.assertTrue;
@@ -18,6 +20,7 @@ public class CrudAppTestSuite {
     private static final String BASE_URL = "https://malczewskikarol.github.io/";
     private WebDriver driver;
     private Random generator;
+
 
     @Before
     public void initTests() {
@@ -53,10 +56,35 @@ public class CrudAppTestSuite {
 
     }
 
-    private void sendTestTaskToTrello(String taskName) throws InterruptedException {
+    private void standBy() {
         driver.navigate().refresh();
-
         while(!driver.findElement(By.xpath("//select[1]")).isDisplayed());
+    }
+
+    private void deleteTaskFromCrud(String taskName) throws InterruptedException {
+        if(driver.switchTo().alert() != null)
+        {
+            Alert alert = driver.switchTo().alert();
+            String alertText = alert.getText();
+            alert.dismiss();
+
+        }
+        standBy();
+
+        driver.findElements(By.xpath("//form[@class=\"datatable__row\"]")).stream()
+                .filter(anyForm ->
+                        anyForm.findElement(By.xpath(".//p[@class=\"datatable__field-value\"]"))
+                                .getText().equals(taskName))
+                .forEach(theForm -> {
+                    WebElement deleteElement = theForm.findElement(By.xpath("//button[4]"));
+                    deleteElement.click();
+                });
+        Thread.sleep(2000);
+
+    }
+
+    private void sendTestTaskToTrello(String taskName) throws InterruptedException {
+        standBy();
 
         driver.findElements(By.xpath("//form[@class=\"datatable__row\"]")).stream()
                 .filter(anyForm ->
@@ -106,5 +134,7 @@ public class CrudAppTestSuite {
         String taskName = createCrudAppTestTask();
         sendTestTaskToTrello(taskName);
         assertTrue(checkTaskExistsInTrello(taskName));
+        deleteTaskFromCrud(taskName);
+
     }
 }
