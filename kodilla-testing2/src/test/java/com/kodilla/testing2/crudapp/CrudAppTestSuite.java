@@ -1,6 +1,5 @@
 package com.kodilla.testing2.crudapp;
 
-import com.google.common.collect.Iterables;
 import com.kodilla.testing2.config.WebDriverConfig;
 import org.junit.After;
 import org.junit.Before;
@@ -8,10 +7,7 @@ import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.Select;
 
-import java.security.Key;
 import java.util.Random;
-import java.util.Set;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import static junit.framework.TestCase.assertTrue;
@@ -74,7 +70,7 @@ public class CrudAppTestSuite {
         driver.findElements(By.xpath("//form[@class=\"datatable__row\"]")).stream()
                 .filter(anyForm ->
                         anyForm.findElement(By.xpath(".//p[@class=\"datatable__field-value\"]"))
-                                .getText().equals(taskName))
+                                .getText().contains(taskName))
                 .forEach(theForm -> {
                     WebElement deleteElement = theForm.findElement(By.xpath("//button[4]"));
                     deleteElement.click();
