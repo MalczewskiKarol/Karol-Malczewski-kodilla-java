@@ -47,7 +47,7 @@ public class StoredPostTestSuite {
         //Then
         String sqlCheckTable = "SELECT COUNT(*) AS BESTSELLER_TEST FROM BOOKS WHERE BESTSELLER = 0";
         ResultSet rs = statement.executeQuery(sqlCheckTable);
-        int howMany = -1;
+        int howMany = 0;
         if(rs.next()) {
             howMany = rs.getInt("BESTSELLER_TEST");
         }
