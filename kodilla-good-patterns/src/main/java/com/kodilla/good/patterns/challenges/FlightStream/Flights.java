@@ -34,4 +34,9 @@ public final class Flights {
         result = 31 * result + flyTo.hashCode();
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "[" + flyFrom + "] => [" + flyTo +"]";
+    }
 }

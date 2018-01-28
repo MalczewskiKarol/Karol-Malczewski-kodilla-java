@@ -22,11 +22,6 @@ public final class FlightsList {
 
     public List<Flights> getFlightsList() {
         return new ArrayList<>(theFlightsList);
-    }
 
-    public void getToString() {
-        for(int n = 0; n < theFlightsList.size(); n++) {
-            theFlightsList.get(n).toString();
-        }
     }
 }
