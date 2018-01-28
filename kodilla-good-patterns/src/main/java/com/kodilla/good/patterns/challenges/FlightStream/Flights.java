@@ -3,10 +3,12 @@ package com.kodilla.good.patterns.challenges.FlightStream;
 public final class Flights {
     private String flyFrom;
     private String flyTo;
+    private String flyChange;
 
-    public Flights(String flyFrom, String flyTo) {
+    public Flights(String flyFrom, String flyTo, String flyChange) {
         this.flyFrom = flyFrom;
         this.flyTo = flyTo;
+        this.flyChange = flyChange;
     }
 
     public String getFlyFrom() {
@@ -15,6 +17,10 @@ public final class Flights {
 
     public String getFlyTo() {
         return flyTo;
+    }
+
+    public String getFlyChange() {
+        return flyChange;
     }
 
     @Override

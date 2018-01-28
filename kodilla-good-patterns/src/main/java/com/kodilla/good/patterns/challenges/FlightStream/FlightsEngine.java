@@ -22,6 +22,14 @@ public class FlightsEngine {
         return result;
     }
 
+    public List<Flights> findFlightWithChange(String flyChange) {
+        FlightsList flightsList = new FlightsList();
+        List<Flights> result = flightsList.getFlightsList().stream()
+                .filter(flights -> flights.getFlyChange().equals(flyChange))
+                .collect(Collectors.toList());
+        return result;
+    }
+
     public void printLnFlights(List<Flights> theFlightsList) {
         for(int n = 0; n < theFlightsList.size(); n++) {
             System.out.println(theFlightsList.get(n).toString());
