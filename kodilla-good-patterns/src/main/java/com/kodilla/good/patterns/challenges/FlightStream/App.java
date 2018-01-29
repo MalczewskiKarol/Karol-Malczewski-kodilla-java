@@ -1,28 +1,28 @@
 package com.kodilla.good.patterns.challenges.FlightStream;
 
-import java.util.List;
+import java.util.Set;
 
 public class App {
 
     public static void main(String[] args) throws java.lang.Exception {
-        String flyFrom = "Szczecin";
-        String flyTo = "Warszawa";
-        String flyChange = "Wroclaw";
+        String flyFrom = "Poznan";
+        String flyTo = "Wroclaw";
+        String flyBy = "Gdansk";
 
         FlightsEngine flightsEngine = new FlightsEngine();
 
         System.out.println("Flights from [" + flyFrom + "]:");
-        List<Flights> flightsFromSzn = flightsEngine.findFlightFrom(flyFrom);
-        flightsEngine.printLnFlights(flightsFromSzn);
+        Set<Flights> flightsFromSzn = flightsEngine.findFlightFrom(flyFrom);
+        System.out.println(flightsFromSzn);
 
         System.out.println("\n");
         System.out.println("Flights to [" + flyTo + "]:");
-        List<Flights> flightToWwa = flightsEngine.findFlightTo(flyTo);
-        flightsEngine.printLnFlights(flightToWwa);
+        Set<Flights> flightToWwa = flightsEngine.findFlightTo(flyTo);
+        System.out.println(flightToWwa);
 
         System.out.println("\n");
-        System.out.println("Flights to [" + flyTo + "] with change in [" + flyChange + "]:");
-        List<Flights> flightsByWro = flightsEngine.findFlightWithChange(flyChange);
-        flightsEngine.printLnFlights(flightsByWro);
+        System.out.println("Flights to [" + flyTo + "] with change in [" + flyBy + "]:");
+        Set<Flights> flightsByWro = flightsEngine.findFlightWithChange(flyFrom, flyTo, flyBy);
+        System.out.println(flightsByWro);
     }
 }

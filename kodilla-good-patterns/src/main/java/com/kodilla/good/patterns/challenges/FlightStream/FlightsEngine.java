@@ -1,38 +1,36 @@
 package com.kodilla.good.patterns.challenges.FlightStream;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class FlightsEngine {
 
-    public List<Flights> findFlightFrom(String flyFrom) {
+    public Set<Flights> findFlightFrom(String flyFrom) {
         FlightsList flightsList = new FlightsList();
-        List<Flights> result = flightsList.getFlightsList().stream()
+        Set<Flights> result = flightsList.getFlightsList().stream()
                 .filter(flights -> flights.getFlyFrom().equals(flyFrom))
-                .collect(Collectors.toCollection(ArrayList::new));
+                .collect(Collectors.toSet());
         return result;
     }
 
-    public List<Flights> findFlightTo(String flyTo) {
+    public Set<Flights> findFlightTo(String flyTo) {
         FlightsList flightsList = new FlightsList();
-        List<Flights> result = flightsList.getFlightsList().stream()
+        Set<Flights> result = flightsList.getFlightsList().stream()
                 .filter(flights -> flights.getFlyTo().equals(flyTo))
-                .collect(Collectors.toList());
+                .collect(Collectors.toSet());
         return result;
     }
 
-    public List<Flights> findFlightWithChange(String flyChange) {
+    public Set<Flights> findFlightWithChange(String flyFrom, String flyTo, String flyBy) {
+
         FlightsList flightsList = new FlightsList();
-        List<Flights> result = flightsList.getFlightsList().stream()
-                .filter(flights -> flights.getFlyChange().equals(flyChange))
-                .collect(Collectors.toList());
-        return result;
-    }
 
-    public void printLnFlights(List<Flights> theFlightsList) {
-        for(int n = 0; n < theFlightsList.size(); n++) {
-            System.out.println(theFlightsList.get(n).toString());
-        }
+        Set<Flights> result = flightsList.getFlightsList().stream()
+                .filter(f -> f.getFlyFrom().equals(flyFrom))
+                .filter(g -> g.getFlyTo().equals(flyTo))
+                .filter(h -> h.getFlyBy().equals(flyBy))
+                .collect(Collectors.toSet());
+        return result;
+
     }
 }
