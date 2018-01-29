@@ -21,16 +21,20 @@ public class FlightsEngine {
         return result;
     }
 
-    public Set<Flights> findFlightWithChange(String flyFrom, String flyTo, String flyBy) {
+    public Set<Flights> findFlightWithChange(String flyFrom, String flyTo, String flyBy) throws NullPointerException {
 
         FlightsList flightsList = new FlightsList();
 
-        Set<Flights> result = flightsList.getFlightsList().stream()
-                .filter(f -> f.getFlyFrom().equals(flyFrom))
-                .filter(g -> g.getFlyTo().equals(flyTo))
-                .filter(h -> h.getFlyBy().equals(flyBy))
-                .collect(Collectors.toSet());
-        return result;
+        try {
+            Set<Flights> result = flightsList.getFlightsList().stream()
+                    .filter(f -> f.getFlyFrom().equals(flyFrom))
+                    .filter(g -> g.getFlyTo().equals(flyTo))
+                    .filter(h -> h.getFlyBy().equals(flyBy))
+                    .collect(Collectors.toSet());
+            return result;
+        } catch (Exception e) {
 
+        }
+        return null;
     }
 }

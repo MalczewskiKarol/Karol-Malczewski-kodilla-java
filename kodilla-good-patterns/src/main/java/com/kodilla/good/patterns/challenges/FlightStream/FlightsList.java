@@ -9,9 +9,9 @@ public final class FlightsList {
     public FlightsList() {
         theFlightsList.add(new Flights("Wroclaw", "Warszawa", null));
         theFlightsList.add(new Flights("Warszawa", "Wroclaw", null));
-        theFlightsList.add(new Flights("Poznan", "Warszawa", "[Torun]"));
+        theFlightsList.add(new Flights("Poznan", "Warszawa", "Torun"));
         theFlightsList.add(new Flights("Warszawa", "Poznan", null));
-        theFlightsList.add(new Flights("Krakow", "Warszawa", "[Katowice]"));
+        theFlightsList.add(new Flights("Krakow", "Warszawa", "Katowice"));
         theFlightsList.add(new Flights("Warszawa", "Krakow", null));
         theFlightsList.add(new Flights("Wroclaw", "Radom", "Lodz"));
         theFlightsList.add(new Flights("Radom", "Wroclaw", null));
@@ -20,7 +20,7 @@ public final class FlightsList {
         theFlightsList.add(new Flights("Szczecin", "Krakow", "Bydgoszcz"));
         theFlightsList.add(new Flights("Torun", "Warszawa", null));
         theFlightsList.add(new Flights("Lodz", "Warszawa", null));
-        theFlightsList.add(new Flights("Szczecin", "Wroclaw", "[Warszawa]"));
+        theFlightsList.add(new Flights("Szczecin", "Wroclaw", "Warszawa"));
 
 
     }
