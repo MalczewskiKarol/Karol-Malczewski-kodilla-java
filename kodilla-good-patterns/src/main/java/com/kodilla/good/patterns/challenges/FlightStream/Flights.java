@@ -1,16 +1,12 @@
 package com.kodilla.good.patterns.challenges.FlightStream;
 
-import java.util.Optional;
-
 public final class Flights {
     private String flyFrom;
     private String flyTo;
-    private String flyBy;
 
-    public Flights(String flyFrom, String flyTo, String flyBy) {
+    public Flights(String flyFrom, String flyTo) {
         this.flyFrom = flyFrom;
         this.flyTo = flyTo;
-        this.flyBy = flyBy;
     }
 
     public String getFlyFrom() {
@@ -19,10 +15,6 @@ public final class Flights {
 
     public String getFlyTo() {
         return flyTo;
-    }
-
-    public String getFlyBy() {
-        return flyBy;
     }
 
     @Override
@@ -45,10 +37,6 @@ public final class Flights {
 
     @Override
     public String toString() {
-        if(flyBy == null) {
-            return "[" + flyFrom + "] => [" + flyTo + "]";
-        } else {
-            return "[" + flyFrom + "] => [" + flyTo + "] CHANGE IN {" + flyBy + "}";
-        }
+        return "[" + flyFrom + "] => [" + flyTo + "]";
     }
 }
