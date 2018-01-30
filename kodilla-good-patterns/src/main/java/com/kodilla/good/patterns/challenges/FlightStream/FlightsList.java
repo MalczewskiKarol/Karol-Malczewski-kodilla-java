@@ -8,8 +8,8 @@ public final class FlightsList {
 
     public FlightsList() {
         theFlightsList.add(new Flights("Wroclaw", "Poznan"));
+        theFlightsList.add(new Flights("Poznan", "Warszawa"));
         theFlightsList.add(new Flights("Warszawa", "Wroclaw"));
-        theFlightsList.add(new Flights("Wroclaw", "Warszawa"));
         theFlightsList.add(new Flights("Warszawa", "Poznan"));
         theFlightsList.add(new Flights("Krakow", "Warszawa"));
         theFlightsList.add(new Flights("Warszawa", "Krakow"));
@@ -18,11 +18,8 @@ public final class FlightsList {
         theFlightsList.add(new Flights("Szczecin", "Poznan"));
         theFlightsList.add(new Flights("Wroclaw", "Szczecin"));
         theFlightsList.add(new Flights("Szczecin", "Poznan"));
-        theFlightsList.add(new Flights("Poznan", "Warszawa"));
         theFlightsList.add(new Flights("Lodz", "Warszawa"));
         theFlightsList.add(new Flights("Szczecin", "Poznan"));
-
-
     }
 
     public Set<Flights> getFlightsList() {
