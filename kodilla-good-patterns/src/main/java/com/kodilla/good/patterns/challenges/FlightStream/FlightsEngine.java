@@ -26,8 +26,7 @@ public class FlightsEngine {
                 .filter(flights -> flights.getFlyFrom().equals(flyFrom))
                 .filter(flights -> flights.getFlyTo().equals(flyBy))
                 .collect(Collectors.toSet());
-
-        flightsFromBy = new FlightsList();
+        FlightsList flightsByTo = new FlightsList();
                 flightsFromBy.getFlightsList().stream()
                 .filter(flights -> flights.getFlyFrom().equals(flyBy))
                 .filter(flights -> flights.getFlyTo().equals(flyTo))
