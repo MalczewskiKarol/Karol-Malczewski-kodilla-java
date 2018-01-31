@@ -16,7 +16,7 @@ public class App {
         System.out.println(flightTo);
 
         System.out.println(" \n Flights with change: ");
-        FlightsList flightBy = flightsEngine.findFlightWithChange("Wroclaw", "Poznan", "Warszawa");
+        Set<Flights> flightBy = flightsEngine.findFlightWithChange("Wroclaw", "Poznan", "Warszawa");
         System.out.println(flightBy);
     }
 }

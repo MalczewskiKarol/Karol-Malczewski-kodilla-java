@@ -20,17 +20,15 @@ public class FlightsEngine {
         return result;
     }
 
-    public FlightsList findFlightWithChange(String flyFrom, String flyBy, String flyTo) {
-        FlightsList flightsFromBy =  new FlightsList();
-                flightsFromBy.getFlightsList().stream()
-                .filter(flights -> flights.getFlyFrom().equals(flyFrom))
-                .filter(flights -> flights.getFlyTo().equals(flyBy))
+    public Set<Flights> findFlightWithChange(String flyFrom, String flyBy, String flyTo) {
+        Set<Flights> flightsFromToBy = findFlightFrom(flyFrom).stream()
+                .filter(f -> f.getFlyFrom().equals(flyBy))
                 .collect(Collectors.toSet());
-        FlightsList flightsByTo = new FlightsList();
-                flightsFromBy.getFlightsList().stream()
-                .filter(flights -> flights.getFlyFrom().equals(flyBy))
-                .filter(flights -> flights.getFlyTo().equals(flyTo))
+        Set<Flights> flightsFromByTo = findFlightFrom(flyBy).stream()
+                .filter(f -> f.getFlyTo().equals(flyTo))
                 .collect(Collectors.toSet());
-        return flightsFromBy;
+        flightsFromToBy.addAll(flightsFromByTo);
+
+                return flightsFromToBy;
     }
 }
