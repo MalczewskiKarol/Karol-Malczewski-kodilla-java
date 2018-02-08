@@ -29,6 +29,6 @@ public class FlightsEngine {
                 .collect(Collectors.toSet());
         flightsFromToBy.addAll(flightsFromByTo);
 
-                return flightsFromToBy;
+        return flightsFromToBy;
     }
 }
